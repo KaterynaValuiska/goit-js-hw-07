@@ -21,8 +21,11 @@ list.insertAdjacentHTML("afterbegin", imgUp);
 list.addEventListener('click', onShowModal);
 
 function onShowModal(event) {  
-    event.preventDefault();
-
+  event.preventDefault();
+  
+  if (!event.target.classList.contains('gallery__image')) {
+    return;
+  }
     const source = event.target.dataset.source;
     const alt = event.target.alt;
     
